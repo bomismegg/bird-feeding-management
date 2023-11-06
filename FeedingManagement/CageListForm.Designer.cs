@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            txtID = new TextBox();
-            label3 = new Label();
-            this.txtName = new TextBox();
-            label4 = new Label();
-            cboStatus = new ComboBox();
-            radioAuto = new RadioButton();
-            radioManual = new RadioButton();
-            dataGridView1 = new DataGridView();
-            newBtn = new Button();
-            updateBtn = new Button();
             removeBtn = new Button();
+            updateBtn = new Button();
+            newBtn = new Button();
+            radioManual = new RadioButton();
+            radioAuto = new RadioButton();
+            cboStatus = new ComboBox();
+            label4 = new Label();
+            label3 = new Label();
+            txtID = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -50,13 +50,13 @@
             // 
             groupBox1.BackColor = SystemColors.Control;
             groupBox1.CausesValidation = false;
+            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(removeBtn);
             groupBox1.Controls.Add(updateBtn);
             groupBox1.Controls.Add(newBtn);
             groupBox1.Controls.Add(radioManual);
             groupBox1.Controls.Add(radioAuto);
             groupBox1.Controls.Add(cboStatus);
-            groupBox1.Controls.Add(this.txtName);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtID);
@@ -69,79 +69,32 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // label1
+            // removeBtn
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(127, 70);
-            label1.Name = "label1";
-            label1.Size = new Size(158, 41);
-            label1.TabIndex = 0;
-            label1.Text = "Cage List ";
+            removeBtn.Location = new Point(300, 369);
+            removeBtn.Name = "removeBtn";
+            removeBtn.Size = new Size(111, 29);
+            removeBtn.TabIndex = 5;
+            removeBtn.Text = "Remove";
+            removeBtn.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // updateBtn
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(34, 157);
-            label2.Name = "label2";
-            label2.Size = new Size(24, 20);
-            label2.TabIndex = 1;
-            label2.Text = "ID";
+            updateBtn.Location = new Point(183, 369);
+            updateBtn.Name = "updateBtn";
+            updateBtn.Size = new Size(111, 29);
+            updateBtn.TabIndex = 5;
+            updateBtn.Text = "Update";
+            updateBtn.UseVisualStyleBackColor = true;
             // 
-            // txtID
+            // newBtn
             // 
-            txtID.Location = new Point(94, 150);
-            txtID.Name = "txtID";
-            txtID.ReadOnly = true;
-            txtID.Size = new Size(94, 27);
-            txtID.TabIndex = 2;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(34, 203);
-            label3.Name = "label3";
-            label3.Size = new Size(46, 25);
-            label3.TabIndex = 1;
-            label3.Text = "Name";
-            label3.UseCompatibleTextRendering = true;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new Point(94, 196);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new Size(321, 27);
-            this.txtName.TabIndex = 2;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(34, 245);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 25);
-            label4.TabIndex = 1;
-            label4.Text = "Status";
-            label4.UseCompatibleTextRendering = true;
-            // 
-            // cboStatus
-            // 
-            cboStatus.FormattingEnabled = true;
-            cboStatus.Items.AddRange(new object[] { "Available", "Not Available" });
-            cboStatus.Location = new Point(94, 242);
-            cboStatus.Name = "cboStatus";
-            cboStatus.Size = new Size(321, 28);
-            cboStatus.TabIndex = 3;
-            // 
-            // radioAuto
-            // 
-            radioAuto.AutoSize = true;
-            radioAuto.Location = new Point(116, 290);
-            radioAuto.Name = "radioAuto";
-            radioAuto.Size = new Size(99, 24);
-            radioAuto.TabIndex = 4;
-            radioAuto.TabStop = true;
-            radioAuto.Text = "Automatic";
-            radioAuto.UseVisualStyleBackColor = true;
+            newBtn.Location = new Point(58, 369);
+            newBtn.Name = "newBtn";
+            newBtn.Size = new Size(111, 29);
+            newBtn.TabIndex = 5;
+            newBtn.Text = "New";
+            newBtn.UseVisualStyleBackColor = true;
             // 
             // radioManual
             // 
@@ -154,6 +107,73 @@
             radioManual.Text = "Manual";
             radioManual.UseVisualStyleBackColor = true;
             // 
+            // radioAuto
+            // 
+            radioAuto.AutoSize = true;
+            radioAuto.Location = new Point(116, 290);
+            radioAuto.Name = "radioAuto";
+            radioAuto.Size = new Size(99, 24);
+            radioAuto.TabIndex = 4;
+            radioAuto.TabStop = true;
+            radioAuto.Text = "Automatic";
+            radioAuto.UseVisualStyleBackColor = true;
+            // 
+            // cboStatus
+            // 
+            cboStatus.FormattingEnabled = true;
+            cboStatus.Items.AddRange(new object[] { "Available", "Not Available" });
+            cboStatus.Location = new Point(94, 242);
+            cboStatus.Name = "cboStatus";
+            cboStatus.Size = new Size(321, 28);
+            cboStatus.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(34, 245);
+            label4.Name = "label4";
+            label4.Size = new Size(47, 25);
+            label4.TabIndex = 1;
+            label4.Text = "Status";
+            label4.UseCompatibleTextRendering = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(34, 203);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 25);
+            label3.TabIndex = 1;
+            label3.Text = "Name";
+            label3.UseCompatibleTextRendering = true;
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(94, 150);
+            txtID.Name = "txtID";
+            txtID.ReadOnly = true;
+            txtID.Size = new Size(94, 27);
+            txtID.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 157);
+            label2.Name = "label2";
+            label2.Size = new Size(24, 20);
+            label2.TabIndex = 1;
+            label2.Text = "ID";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(127, 70);
+            label1.Name = "label1";
+            label1.Size = new Size(158, 41);
+            label1.TabIndex = 0;
+            label1.Text = "Cage List ";
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -164,32 +184,12 @@
             dataGridView1.Size = new Size(488, 497);
             dataGridView1.TabIndex = 1;
             // 
-            // newBtn
+            // textBox1
             // 
-            newBtn.Location = new Point(58, 369);
-            newBtn.Name = "newBtn";
-            newBtn.Size = new Size(111, 29);
-            newBtn.TabIndex = 5;
-            newBtn.Text = "New";
-            newBtn.UseVisualStyleBackColor = true;
-            // 
-            // updateBtn
-            // 
-            updateBtn.Location = new Point(183, 369);
-            updateBtn.Name = "updateBtn";
-            updateBtn.Size = new Size(111, 29);
-            updateBtn.TabIndex = 5;
-            updateBtn.Text = "Update";
-            updateBtn.UseVisualStyleBackColor = true;
-            // 
-            // removeBtn
-            // 
-            removeBtn.Location = new Point(300, 369);
-            removeBtn.Name = "removeBtn";
-            removeBtn.Size = new Size(111, 29);
-            removeBtn.TabIndex = 5;
-            removeBtn.Text = "Remove";
-            removeBtn.UseVisualStyleBackColor = true;
+            textBox1.Location = new Point(94, 200);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(321, 27);
+            textBox1.TabIndex = 6;
             // 
             // CageListForm
             // 
@@ -224,5 +224,6 @@
         private Button removeBtn;
         private Button updateBtn;
         private Button newBtn;
+        private TextBox textBox1;
     }
 }
