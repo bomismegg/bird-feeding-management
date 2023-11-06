@@ -1,4 +1,6 @@
-﻿namespace DevExpress.DentalClinic
+﻿using DevExpress.XtraRichEdit.Model;
+
+namespace DevExpress.DentalClinic
 {
     partial class MainForm
     {
@@ -29,20 +31,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip17 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem17 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip18 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem18 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip19 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem19 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip16 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem16 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem15 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip20 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem20 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip21 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem21 = new DevExpress.Utils.ToolTipItem();
             this.navigationFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.accordionControl = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.navigationGroup = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -73,10 +75,11 @@
             // 
             this.navigationFrame.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             this.navigationFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationFrame.Location = new System.Drawing.Point(0, 35);
+            this.navigationFrame.Location = new System.Drawing.Point(0, 44);
+            this.navigationFrame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navigationFrame.Name = "navigationFrame";
             this.navigationFrame.SelectedPage = null;
-            this.navigationFrame.Size = new System.Drawing.Size(1333, 835);
+            this.navigationFrame.Size = new System.Drawing.Size(1644, 1040);
             this.navigationFrame.TabIndex = 0;
             this.navigationFrame.Text = "navigationFrame";
             // 
@@ -85,16 +88,18 @@
             this.accordionControl.AllowItemSelection = true;
             this.accordionControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.navigationGroup});
-            this.accordionControl.Location = new System.Drawing.Point(0, 30);
+            this.navigationGroup,
+            this.usersViewItem,
+            this.dashboardViewItem});
+            this.accordionControl.Location = new System.Drawing.Point(0, 41);
+            this.accordionControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.accordionControl.Name = "accordionControl";
             this.accordionControl.OptionsMinimizing.AllowMinimizeMode = DevExpress.Utils.DefaultBoolean.False;
             this.accordionControl.OptionsMinimizing.FooterHeight = 60;
             this.accordionControl.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl.RootDisplayMode = DevExpress.XtraBars.Navigation.AccordionControlRootDisplayMode.Footer;
-            this.accordionControl.Size = new System.Drawing.Size(70, 870);
+            this.accordionControl.Size = new System.Drawing.Size(110, 1084);
             this.accordionControl.TabIndex = 1;
-            this.accordionControl.Text = "accordionControl";
             this.accordionControl.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
             // navigationGroup
@@ -113,57 +118,57 @@
             // myProfileViewItem
             // 
             this.myProfileViewItem.Height = 60;
-            this.myProfileViewItem.ImageOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.Login;
+            //this.myProfileViewItem.ImageOptions.SvgImage = "user.png";
             this.myProfileViewItem.Name = "myProfileViewItem";
-            this.myProfileViewItem.Tag = "EmployeeView";
             this.myProfileViewItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            toolTipItem1.Text = "My Profile";
-            superToolTip1.Items.Add(toolTipItem1);
-            this.myProfileViewItem.SuperTip = superToolTip1;
+            toolTipItem17.Text = "My Profile";
+            superToolTip17.Items.Add(toolTipItem17);
+            this.myProfileViewItem.SuperTip = superToolTip17;
+            this.myProfileViewItem.Tag = "EmployeeView";
             // 
             // schedulerViewItem
             // 
             this.schedulerViewItem.Height = 60;
             this.schedulerViewItem.ImageOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.calendar;
             this.schedulerViewItem.Name = "schedulerViewItem";
-            this.schedulerViewItem.Tag = "SchedulerView";
             this.schedulerViewItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            toolTipItem2.Text = "Calendar";
-            superToolTip2.Items.Add(toolTipItem2);
-            this.schedulerViewItem.SuperTip = superToolTip2;
+            toolTipItem18.Text = "Calendar";
+            superToolTip18.Items.Add(toolTipItem18);
+            this.schedulerViewItem.SuperTip = superToolTip18;
+            this.schedulerViewItem.Tag = "SchedulerView";
             // 
             // patientsViewItem
             // 
             this.patientsViewItem.Height = 60;
             this.patientsViewItem.ImageOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.Patients;
             this.patientsViewItem.Name = "patientsViewItem";
-            this.patientsViewItem.Tag = "PatientCollectionView";
             this.patientsViewItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            toolTipItem3.Text = "Patients";
-            superToolTip3.Items.Add(toolTipItem3);
-            this.patientsViewItem.SuperTip = superToolTip3;
+            toolTipItem19.Text = "Patients";
+            superToolTip19.Items.Add(toolTipItem19);
+            this.patientsViewItem.SuperTip = superToolTip19;
+            this.patientsViewItem.Tag = "PatientCollectionView";
             // 
             // dashboardViewItem
             // 
             this.dashboardViewItem.Height = 60;
             this.dashboardViewItem.ImageOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.Chart;
             this.dashboardViewItem.Name = "dashboardViewItem";
-            this.dashboardViewItem.Tag = "AnalyticsView";
             this.dashboardViewItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            toolTipItem4.Text = "Analytics";
-            superToolTip4.Items.Add(toolTipItem4);
-            this.dashboardViewItem.SuperTip = superToolTip4;
+            toolTipItem16.Text = "Analytics";
+            superToolTip16.Items.Add(toolTipItem16);
+            this.dashboardViewItem.SuperTip = superToolTip16;
+            this.dashboardViewItem.Tag = "AnalyticsView";
             // 
             // usersViewItem
             // 
             this.usersViewItem.Height = 60;
             this.usersViewItem.ImageOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.people;
             this.usersViewItem.Name = "usersViewItem";
-            this.usersViewItem.Tag = "UserCollectionView";
             this.usersViewItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            toolTipItem5.Text = "Employees";
-            superToolTip5.Items.Add(toolTipItem5);
-            this.usersViewItem.SuperTip = superToolTip5;
+            toolTipItem15.Text = "Employees";
+            superToolTip15.Items.Add(toolTipItem15);
+            this.usersViewItem.SuperTip = superToolTip15;
+            this.usersViewItem.Tag = "UserCollectionView";
             // 
             // fluentDesignFormControl
             // 
@@ -172,8 +177,9 @@
             this.darkThemeBBI,
             this.loginButtonItem});
             this.fluentDesignFormControl.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fluentDesignFormControl.Name = "fluentDesignFormControl";
-            this.fluentDesignFormControl.Size = new System.Drawing.Size(1403, 30);
+            this.fluentDesignFormControl.Size = new System.Drawing.Size(1754, 41);
             this.fluentDesignFormControl.TabIndex = 2;
             this.fluentDesignFormControl.TabStop = false;
             this.fluentDesignFormControl.TitleItemLinks.Add(this.darkThemeBBI);
@@ -186,9 +192,9 @@
             this.darkThemeBBI.Id = 0;
             this.darkThemeBBI.ImageOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.DarkTheme;
             this.darkThemeBBI.Name = "darkThemeBBI";
-            toolTipItem6.Text = "Change theme";
-            superToolTip6.Items.Add(toolTipItem6);
-            this.darkThemeBBI.SuperTip = superToolTip6;
+            toolTipItem20.Text = "Change theme";
+            superToolTip20.Items.Add(toolTipItem20);
+            this.darkThemeBBI.SuperTip = superToolTip20;
             // 
             // loginButtonItem
             // 
@@ -197,19 +203,20 @@
             this.loginButtonItem.Id = 0;
             this.loginButtonItem.ImageOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.Lock;
             this.loginButtonItem.Name = "loginButtonItem";
-            toolTipItem7.Text = "Change User";
-            superToolTip7.Items.Add(toolTipItem7);
-            this.loginButtonItem.SuperTip = superToolTip7;
+            toolTipItem21.Text = "Change User";
+            superToolTip21.Items.Add(toolTipItem21);
+            this.loginButtonItem.SuperTip = superToolTip21;
             // 
             // mvvmContext
             // 
             this.mvvmContext.ContainerControl = this;
-            this.mvvmContext.ViewModelType = typeof(DevExpress.DentalClinic.ViewModel.NavigationViewModel);
+            //    this.mvvmContext.ViewModelType = typeof(DevExpress.DentalClinic.ViewModel.NavigationViewModel);
             // 
             // breadCrumbEdit1
             // 
             this.breadCrumbEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.breadCrumbEdit1.Location = new System.Drawing.Point(5, 5);
+            this.breadCrumbEdit1.Location = new System.Drawing.Point(6, 6);
+            this.breadCrumbEdit1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.breadCrumbEdit1.Name = "breadCrumbEdit1";
             this.breadCrumbEdit1.Properties.AllowEdit = false;
             this.breadCrumbEdit1.Properties.AllowNodeDropDown = false;
@@ -220,7 +227,7 @@
             this.breadCrumbEdit1.Properties.AutoHeight = false;
             this.breadCrumbEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.breadCrumbEdit1.Properties.ShowPathSuggestions = false;
-            this.breadCrumbEdit1.Size = new System.Drawing.Size(1323, 25);
+            this.breadCrumbEdit1.Size = new System.Drawing.Size(1632, 32);
             this.breadCrumbEdit1.TabIndex = 3;
             // 
             // pnlNavigationBar
@@ -229,9 +236,10 @@
             this.pnlNavigationBar.Controls.Add(this.breadCrumbEdit1);
             this.pnlNavigationBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNavigationBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlNavigationBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlNavigationBar.Name = "pnlNavigationBar";
-            this.pnlNavigationBar.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlNavigationBar.Size = new System.Drawing.Size(1333, 35);
+            this.pnlNavigationBar.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlNavigationBar.Size = new System.Drawing.Size(1644, 44);
             this.pnlNavigationBar.TabIndex = 4;
             // 
             // mainPanel
@@ -240,21 +248,23 @@
             this.mainPanel.Controls.Add(this.navigationFrame);
             this.mainPanel.Controls.Add(this.pnlNavigationBar);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(70, 30);
+            this.mainPanel.Location = new System.Drawing.Point(110, 41);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1333, 870);
+            this.mainPanel.Size = new System.Drawing.Size(1644, 1084);
             this.mainPanel.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1403, 900);
+            this.ClientSize = new System.Drawing.Size(1754, 1125);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.accordionControl);
             this.Controls.Add(this.fluentDesignFormControl);
             this.FluentDesignFormControl = this.fluentDesignFormControl;
             this.IconOptions.SvgImage = global::DevExpress.DentalClinic.Properties.Resources.FormIcon;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimumSize = new System.Drawing.Size(1400, 900);
             this.Name = "MainForm";
             this.NavigationControl = this.accordionControl;
