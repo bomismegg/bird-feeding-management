@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess
 {
     public class CageDAO
     {
-        private static List<Cage> cageList = new List<Cage>();
-
         private static CageDAO instance = null;
         private static readonly object instanceLock = new object();
+        private BirdfoodmgrContext context;
 
         public static CageDAO Instance
         {
@@ -25,59 +27,47 @@ namespace DataAccess
             }
         }
 
+        private CageDAO()
+        {
+            context = new BirdfoodmgrContext();
+        }
+
         public List<Cage> GetCages()
         {
-            return cageList;
+            try
+            {
+                return context.Cages.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Cage GetCageById(int cageId)
         {
-            foreach (Cage c in cageList)
-            {
-                if (c.Id == cageId)
-                {
-                    return c;
-                }
-            }
-            return null;
+            return context.Cages.FirstOrDefault(c => c.Id == cageId);
         }
 
         public void AddCage(Cage cage)
         {
-            Cage existCage = GetCageById(cage.Id);
-            if (existCage == null)
-            {
-                cageList.Add(cage);
-            }
-            else
-            {
-                throw new Exception("Duplicate cage");
-            }
+            context.Cages.Add(cage);
+            context.SaveChanges();
         }
 
         public void UpdateCage(Cage cage)
         {
-            Cage existCage = GetCageById(cage.Id);
-            if (existCage != null)
-            {
-                cageList[cageList.IndexOf(existCage)] = cage;
-            }
-            else
-            {
-                throw new Exception("Cage not found");
-            }
+            context.Entry(cage).State = EntityState.Modified;
+            context.SaveChanges();
         }
 
         public void DeleteCage(int cageId)
         {
-            Cage existCage = GetCageById(cageId);
-            if (existCage != null)
+            var cage = GetCageById(cageId);
+            if (cage != null)
             {
-                cageList.Remove(existCage);
-            }
-            else
-            {
-                throw new Exception("Cage not found");
+                context.Cages.Remove(cage);
+                context.SaveChanges();
             }
         }
     }

@@ -29,24 +29,14 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            txtID = new TextBox();
-            label3 = new Label();
-            this.txtName = new TextBox();
-            label4 = new Label();
-            cboStatus = new ComboBox();
-            radioAuto = new RadioButton();
+            textBox1 = new TextBox();
             radioManual = new RadioButton();
             radioAuto = new RadioButton();
-            cboStatus = new ComboBox();
-            label4 = new Label();
             label3 = new Label();
             txtID = new TextBox();
             label2 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -56,13 +46,8 @@
             groupBox1.BackColor = SystemColors.Control;
             groupBox1.CausesValidation = false;
             groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(removeBtn);
-            groupBox1.Controls.Add(updateBtn);
-            groupBox1.Controls.Add(newBtn);
             groupBox1.Controls.Add(radioManual);
             groupBox1.Controls.Add(radioAuto);
-            groupBox1.Controls.Add(cboStatus);
-            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtID);
             groupBox1.Controls.Add(label2);
@@ -74,32 +59,12 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // label1
+            // textBox1
             // 
-            removeBtn.Location = new Point(300, 369);
-            removeBtn.Name = "removeBtn";
-            removeBtn.Size = new Size(111, 29);
-            removeBtn.TabIndex = 5;
-            removeBtn.Text = "Remove";
-            removeBtn.UseVisualStyleBackColor = true;
-            // 
-            // updateBtn
-            // 
-            updateBtn.Location = new Point(183, 369);
-            updateBtn.Name = "updateBtn";
-            updateBtn.Size = new Size(111, 29);
-            updateBtn.TabIndex = 5;
-            updateBtn.Text = "Update";
-            updateBtn.UseVisualStyleBackColor = true;
-            // 
-            // newBtn
-            // 
-            newBtn.Location = new Point(58, 369);
-            newBtn.Name = "newBtn";
-            newBtn.Size = new Size(111, 29);
-            newBtn.TabIndex = 5;
-            newBtn.Text = "New";
-            newBtn.UseVisualStyleBackColor = true;
+            textBox1.Location = new Point(94, 200);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(321, 27);
+            textBox1.TabIndex = 6;
             // 
             // radioManual
             // 
@@ -122,25 +87,6 @@
             radioAuto.TabStop = true;
             radioAuto.Text = "Automatic";
             radioAuto.UseVisualStyleBackColor = true;
-            // 
-            // cboStatus
-            // 
-            cboStatus.FormattingEnabled = true;
-            cboStatus.Items.AddRange(new object[] { "Available", "Not Available" });
-            cboStatus.Location = new Point(94, 242);
-            cboStatus.Name = "cboStatus";
-            cboStatus.Size = new Size(321, 28);
-            cboStatus.TabIndex = 3;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(34, 245);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 25);
-            label4.TabIndex = 1;
-            label4.Text = "Status";
-            label4.UseCompatibleTextRendering = true;
             // 
             // label3
             // 
@@ -189,13 +135,6 @@
             dataGridView1.Size = new Size(488, 497);
             dataGridView1.TabIndex = 1;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(94, 200);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(321, 27);
-            textBox1.TabIndex = 6;
-            // 
             // CageListForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -206,6 +145,7 @@
             Controls.Add(groupBox1);
             Name = "CageListForm";
             Text = "CageListForm";
+            Load += CageListForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -217,14 +157,12 @@
         private GroupBox groupBox1;
         private TextBox textBox3;
         private TextBox textBox2;
-        private Label label4;
         private Label label3;
         private TextBox txtID;
         private Label label2;
         private Label label1;
         private RadioButton radioManual;
         private RadioButton radioAuto;
-        private ComboBox cboStatus;
         private DataGridView dataGridView1;
         private Button removeBtn;
         private Button updateBtn;

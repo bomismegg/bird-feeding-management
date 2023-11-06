@@ -25,11 +25,11 @@ namespace FeedingManagement
 
         private void BirdManagementView_Load(object sender, EventArgs e)
         {
-            LoadProducts();
+            LoadBirds();
 
         }
 
-        public void LoadProducts()
+        public void LoadBirds()
         {
             try
             {
@@ -117,7 +117,7 @@ namespace FeedingManagement
                 };
 
                 birdRepository.AddBird(newBird);
-                LoadProducts();
+                LoadBirds();
 
             }
             catch (Exception ex)
@@ -144,7 +144,7 @@ namespace FeedingManagement
                     try
                     {
                         birdRepository.UpdateBird(birdToUpdate);
-                        LoadProducts();
+                        LoadBirds();
 
                     }
                     catch (Exception ex)
@@ -163,7 +163,7 @@ namespace FeedingManagement
                 {
 
                     birdRepository.DeleteBird(birdId);
-                    LoadProducts();
+                    LoadBirds();
                 }
                 catch (Exception ex)
                 {
