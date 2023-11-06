@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace FeedingManagement
 {
-    public partial class FeedingPlanListForm : Form
+    public partial class HistoryForm : Form
     {
-        public FeedingPlanListForm()
+        public HistoryForm()
         {
             InitializeComponent();
         }
-
-
     }
 }
