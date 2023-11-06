@@ -25,6 +25,8 @@ public partial class BirdfoodmgrContext : DbContext
 
     public virtual DbSet<Food> Foods { get; set; }
 
+    public virtual DbSet<History> Histories { get; set; }
+
     public virtual DbSet<Image> Images { get; set; }
 
     public virtual DbSet<Plan> Plans { get; set; }
@@ -35,7 +37,7 @@ public partial class BirdfoodmgrContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=(local); Database=birdfoodmgr; User Id=sa; Password=12345; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=(local); Database=birdfoodmgr; Uid=sa; Pwd=12345; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -68,12 +70,9 @@ public partial class BirdfoodmgrContext : DbContext
 
         modelBuilder.Entity<BirdFood>(entity =>
         {
-            entity.HasKey(e => new { e.Birdid, e.Foodid, e.Timestamp }).HasName("PK__Bird_Foo__70482667267F48E2");
+            entity.HasKey(e => new { e.Birdid, e.Foodid });
 
             entity.ToTable("Bird_Food");
-
-            entity.Property(e => e.Timestamp).HasColumnName("timestamp");
-            entity.Property(e => e.Quantity).HasColumnName("quantity");
 
             entity.HasOne(d => d.Bird).WithMany(p => p.BirdFoods)
                 .HasForeignKey(d => d.Birdid)
@@ -136,6 +135,26 @@ public partial class BirdfoodmgrContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("name");
+        });
+
+        modelBuilder.Entity<History>(entity =>
+        {
+            entity.HasKey(e => new { e.Birdid, e.Foodid, e.Timestamp });
+
+            entity.ToTable("History");
+
+            entity.Property(e => e.Timestamp).HasColumnName("timestamp");
+            entity.Property(e => e.Quantity).HasColumnName("quantity");
+
+            entity.HasOne(d => d.Bird).WithMany(p => p.Histories)
+                .HasForeignKey(d => d.Birdid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_History_Bird");
+
+            entity.HasOne(d => d.Food).WithMany(p => p.Histories)
+                .HasForeignKey(d => d.Foodid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_History_Food");
         });
 
         modelBuilder.Entity<Image>(entity =>

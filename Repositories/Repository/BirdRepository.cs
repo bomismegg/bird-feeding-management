@@ -35,5 +35,10 @@ namespace Repositories.Repository
         {
             BirdDAO.Instance.UpdateBird(bird);
         }
+
+        public Bird GetBirdWithFoods(int birdId)
+        {
+            return BirdDAO.Instance.GetBirdWithFoods(birdId);
+        }
     }
 }
