@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="EmployeeView\" />
-    <Folder Include="Properties\resources\" />
   </ItemGroup>
 
 </Project>
