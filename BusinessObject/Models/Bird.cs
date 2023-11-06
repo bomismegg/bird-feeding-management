@@ -23,5 +23,7 @@ public partial class Bird
 
     public virtual Cage Cage { get; set; } = null!;
 
+    public virtual ICollection<History> Histories { get; set; } = new List<History>();
+
     public virtual ICollection<Image> Images { get; set; } = new List<Image>();
 }

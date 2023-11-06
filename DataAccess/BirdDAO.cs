@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess
 {
     public class BirdDAO
     {
-        private static List<Bird> birdList = new List<Bird>();
-
         private static BirdDAO instance = null;
         private static readonly object instanceLock = new object();
+        private BirdfoodmgrContext context;
 
         public static BirdDAO Instance
         {
@@ -25,60 +27,62 @@ namespace DataAccess
             }
         }
 
+        private BirdDAO()
+        {
+            context = new BirdfoodmgrContext();
+        }
+
         public List<Bird> GetBirds()
         {
-            return birdList;
+            try
+            {
+                return context.Birds
+                    .Include(b => b.BirdFoods)
+                    .Include(b => b.Cage)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Bird GetBirdById(int birdId)
         {
-            foreach (Bird b in birdList)
-            {
-                if (b.Id == birdId)
-                {
-                    return b;
-                }
-            }
-            return null;
+            return context.Birds
+                .Include(b => b.BirdFoods)
+                .Include(b => b.Cage)
+                .FirstOrDefault(b => b.Id == birdId);
         }
 
         public void AddBird(Bird bird)
         {
-            Bird existBird = GetBirdById(bird.Id);
-            if (existBird == null)
-            {
-                birdList.Add(bird);
-            }
-            else
-            {
-                throw new Exception("Duplicate bird");
-            }
+            context.Birds.Add(bird);
+            context.SaveChanges();
         }
 
         public void UpdateBird(Bird bird)
         {
-            Bird existBird = GetBirdById(bird.Id);
-            if (existBird != null)
-            {
-                birdList[birdList.IndexOf(existBird)] = bird;
-            }
-            else
-            {
-                throw new Exception("Bird not found");
-            }
+            context.Entry(bird).State = EntityState.Modified;
+            context.SaveChanges();
         }
 
         public void DeleteBird(int birdId)
         {
-            Bird existBird = GetBirdById(birdId);
-            if (existBird != null)
+            var bird = GetBirdById(birdId);
+            if (bird != null)
             {
-                birdList.Remove(existBird);
+                context.Birds.Remove(bird);
+                context.SaveChanges();
             }
-            else
-            {
-                throw new Exception("Bird not found");
-            }
+        }
+
+        public Bird GetBirdWithFoods(int birdId)
+        {
+            return context.Birds
+                .Include(b => b.BirdFoods)
+                    .ThenInclude(bf => bf.Food)
+                .FirstOrDefault(b => b.Id == birdId);
         }
     }
 }

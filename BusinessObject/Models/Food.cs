@@ -13,5 +13,7 @@ public partial class Food
 
     public virtual ICollection<CageFood> CageFoods { get; set; } = new List<CageFood>();
 
+    public virtual ICollection<History> Histories { get; set; } = new List<History>();
+
     public virtual ICollection<PlanFood> PlanFoods { get; set; } = new List<PlanFood>();
 }

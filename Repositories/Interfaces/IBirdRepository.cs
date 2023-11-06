@@ -15,5 +15,6 @@ namespace Repositories.IRepository
         void UpdateBird(Bird bird);
         void DeleteBird(int birdId);
 
+        public Bird GetBirdWithFoods(int birdId);
     }
 }
