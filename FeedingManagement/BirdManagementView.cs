@@ -103,19 +103,73 @@ namespace FeedingManagement
         }
 
 
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Bird newBird = new Bird
+                {
+                    Name = txtName.Text,
+                    Cageid = int.Parse(txtCageId.Text),
+                    AgePeriod = (txtAge.Text),
+                    IsFeathering = bool.Parse(txtFeathering.Text),
+                    IsPregnant = bool.Parse(txtPregnant.Text)
+                };
+
+                birdRepository.AddBird(newBird);
+                LoadProducts();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (int.TryParse(txtId.Text, out int birdId))
+            {
+                Bird birdToUpdate = birdRepository.GetBirdById(birdId);
 
+                if (birdToUpdate != null)
+                {
+                    // Update bird properties with values from textboxes
+                    birdToUpdate.Name = txtName.Text;
+                    birdToUpdate.Cageid = int.Parse(txtCageId.Text);
+                    birdToUpdate.AgePeriod = (txtAge.Text);
+                    birdToUpdate.IsFeathering = bool.Parse(txtFeathering.Text);
+                    birdToUpdate.IsPregnant = bool.Parse(txtPregnant.Text);
+
+                    try
+                    {
+                        birdRepository.UpdateBird(birdToUpdate);
+                        LoadProducts();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            if (int.TryParse(txtId.Text, out int birdId))
+            {
+                try
+                {
 
-        }
-
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-
+                    birdRepository.DeleteBird(birdId);
+                    LoadProducts();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

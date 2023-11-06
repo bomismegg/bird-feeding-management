@@ -118,7 +118,6 @@
             // 
             // txtFeathering
             // 
-            txtFeathering.Enabled = false;
             txtFeathering.Location = new Point(130, 325);
             txtFeathering.Name = "txtFeathering";
             txtFeathering.Size = new Size(330, 27);
@@ -126,7 +125,6 @@
             // 
             // txtPregnant
             // 
-            txtPregnant.Enabled = false;
             txtPregnant.Location = new Point(131, 282);
             txtPregnant.Name = "txtPregnant";
             txtPregnant.Size = new Size(330, 27);
@@ -152,7 +150,6 @@
             // 
             // txtAge
             // 
-            txtAge.Enabled = false;
             txtAge.Location = new Point(131, 239);
             txtAge.Name = "txtAge";
             txtAge.Size = new Size(330, 27);
@@ -169,7 +166,6 @@
             // 
             // txtName
             // 
-            txtName.Enabled = false;
             txtName.Location = new Point(131, 195);
             txtName.Name = "txtName";
             txtName.Size = new Size(330, 27);
@@ -186,7 +182,6 @@
             // 
             // txtCageId
             // 
-            txtCageId.Enabled = false;
             txtCageId.Location = new Point(131, 148);
             txtCageId.Name = "txtCageId";
             txtCageId.Size = new Size(330, 27);
@@ -203,7 +198,6 @@
             // 
             // txtId
             // 
-            txtId.Enabled = false;
             txtId.Location = new Point(131, 101);
             txtId.Name = "txtId";
             txtId.Size = new Size(330, 27);

@@ -16,5 +16,6 @@ namespace Repositories.IRepository
         void DeleteBird(int birdId);
 
         public Bird GetBirdWithFoods(int birdId);
+        public void AddBirdFood(BirdFood birdFood);
     }
 }

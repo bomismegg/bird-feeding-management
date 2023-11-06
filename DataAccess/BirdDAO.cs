@@ -84,5 +84,11 @@ namespace DataAccess
                     .ThenInclude(bf => bf.Food)
                 .FirstOrDefault(b => b.Id == birdId);
         }
+
+        public void AddBirdFood(BirdFood birdFood)
+        {
+            context.BirdFoods.Add(birdFood);
+            context.SaveChanges();
+        }
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            label1 = new Label();
-            label2 = new Label();
-            txtName = new TextBox();
-            label3 = new Label();
-            txtId = new TextBox();
-            addBtn = new Button();
-            updateBtn = new Button();
             deleteBtn = new Button();
+            updateBtn = new Button();
+            addBtn = new Button();
+            txtId = new TextBox();
+            label3 = new Label();
+            txtName = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -59,15 +59,65 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // deleteBtn
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(538, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(528, 635);
-            dataGridView1.TabIndex = 1;
+            deleteBtn.Location = new Point(341, 267);
+            deleteBtn.Name = "deleteBtn";
+            deleteBtn.Size = new Size(121, 29);
+            deleteBtn.TabIndex = 3;
+            deleteBtn.Text = "&Delete";
+            deleteBtn.UseVisualStyleBackColor = true;
+            // 
+            // updateBtn
+            // 
+            updateBtn.Location = new Point(200, 267);
+            updateBtn.Name = "updateBtn";
+            updateBtn.Size = new Size(121, 29);
+            updateBtn.TabIndex = 3;
+            updateBtn.Text = "Update";
+            updateBtn.UseVisualStyleBackColor = true;
+            // 
+            // addBtn
+            // 
+            addBtn.Location = new Point(48, 267);
+            addBtn.Name = "addBtn";
+            addBtn.Size = new Size(121, 29);
+            addBtn.TabIndex = 3;
+            addBtn.Text = "&Add";
+            addBtn.UseVisualStyleBackColor = true;
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(120, 155);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(237, 27);
+            txtId.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(48, 162);
+            label3.Name = "label3";
+            label3.Size = new Size(27, 20);
+            label3.TabIndex = 1;
+            label3.Text = "ID:";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(120, 188);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(237, 27);
+            txtName.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(48, 195);
+            label2.Name = "label2";
+            label2.Size = new Size(52, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Name:";
             // 
             // label1
             // 
@@ -79,65 +129,15 @@
             label1.TabIndex = 0;
             label1.Text = "Food List";
             // 
-            // label2
+            // dataGridView1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(48, 195);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Name:";
-            // 
-            // txtName
-            // 
-            txtName.Location = new Point(120, 188);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(237, 27);
-            txtName.TabIndex = 2;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(48, 162);
-            label3.Name = "label3";
-            label3.Size = new Size(27, 20);
-            label3.TabIndex = 1;
-            label3.Text = "ID:";
-            // 
-            // txtId
-            // 
-            txtId.Location = new Point(120, 155);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(101, 27);
-            txtId.TabIndex = 2;
-            // 
-            // addBtn
-            // 
-            addBtn.Location = new Point(48, 267);
-            addBtn.Name = "addBtn";
-            addBtn.Size = new Size(121, 29);
-            addBtn.TabIndex = 3;
-            addBtn.Text = "&Add";
-            addBtn.UseVisualStyleBackColor = true;
-            // 
-            // updateBtn
-            // 
-            updateBtn.Location = new Point(200, 267);
-            updateBtn.Name = "updateBtn";
-            updateBtn.Size = new Size(121, 29);
-            updateBtn.TabIndex = 3;
-            updateBtn.Text = "Update";
-            updateBtn.UseVisualStyleBackColor = true;
-            // 
-            // deleteBtn
-            // 
-            deleteBtn.Location = new Point(341, 267);
-            deleteBtn.Name = "deleteBtn";
-            deleteBtn.Size = new Size(121, 29);
-            deleteBtn.TabIndex = 3;
-            deleteBtn.Text = "&Delete";
-            deleteBtn.UseVisualStyleBackColor = true;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(538, 12);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(528, 635);
+            dataGridView1.TabIndex = 1;
             // 
             // FoodListForm
             // 

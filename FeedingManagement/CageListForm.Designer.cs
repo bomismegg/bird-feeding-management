@@ -33,7 +33,7 @@
             label2 = new Label();
             txtID = new TextBox();
             label3 = new Label();
-            this.txtName = new TextBox();
+            //this.txtName = new TextBox();
             label4 = new Label();
             cboStatus = new ComboBox();
             radioAuto = new RadioButton();
@@ -56,7 +56,7 @@
             groupBox1.Controls.Add(radioManual);
             groupBox1.Controls.Add(radioAuto);
             groupBox1.Controls.Add(cboStatus);
-            groupBox1.Controls.Add(this.txtName);
+            //groupBox1.Controls.Add(this.txtName);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtID);
@@ -108,10 +108,10 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new Point(94, 196);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new Size(321, 27);
-            this.txtName.TabIndex = 2;
+            //this.txtName.Location = new Point(94, 196);
+            //this.txtName.Name = "txtName";
+            //this.txtName.Size = new Size(321, 27);
+            //this.txtName.TabIndex = 2;
             // 
             // label4
             // 

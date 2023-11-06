@@ -1,14 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess
 {
     public class FoodDAO
     {
-        private static List<Food> foodList = new List<Food>();
-
         private static FoodDAO instance = null;
         private static readonly object instanceLock = new object();
+        private BirdfoodmgrContext context;
+
+        private FoodDAO()
+        {
+            context = new BirdfoodmgrContext();
+        }
 
         public static FoodDAO Instance
         {
@@ -27,19 +34,19 @@ namespace DataAccess
 
         public List<Food> GetFoods()
         {
-            return foodList;
+            try
+            {
+                return context.Foods.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Food GetFoodById(int foodId)
         {
-            foreach (Food f in foodList)
-            {
-                if (f.Id == foodId)
-                {
-                    return f;
-                }
-            }
-            return null;
+            return context.Foods.FirstOrDefault(f => f.Id == foodId);
         }
 
         public void AddFood(Food food)
@@ -47,7 +54,8 @@ namespace DataAccess
             Food existFood = GetFoodById(food.Id);
             if (existFood == null)
             {
-                foodList.Add(food);
+                context.Foods.Add(food);
+                context.SaveChanges();
             }
             else
             {
@@ -60,7 +68,8 @@ namespace DataAccess
             Food existFood = GetFoodById(food.Id);
             if (existFood != null)
             {
-                foodList[foodList.IndexOf(existFood)] = food;
+                context.Entry(existFood).CurrentValues.SetValues(food);
+                context.SaveChanges();
             }
             else
             {
@@ -73,7 +82,8 @@ namespace DataAccess
             Food existFood = GetFoodById(foodId);
             if (existFood != null)
             {
-                foodList.Remove(existFood);
+                context.Foods.Remove(existFood);
+                context.SaveChanges();
             }
             else
             {
