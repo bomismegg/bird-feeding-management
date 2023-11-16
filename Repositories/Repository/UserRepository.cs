@@ -21,6 +21,11 @@ namespace Repositories.Repository
             UserDAO.Instance.DeleteUser(userId);
         }
 
+        public User GetUser(string email, string password)
+        {
+            return UserDAO.Instance.GetUser(email, password);
+        }
+
         public User GetUserById(int userId)
         {
             return UserDAO.Instance.GetUserById(userId);

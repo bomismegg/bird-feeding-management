@@ -14,6 +14,6 @@ namespace Repositories.IRepository
         void AddFood(Food food);
         void UpdateFood(Food food);
         void DeleteFood(int foodId);
-
+        List<CageFood> GetCageFoodByCageId(int id);
     }
 }

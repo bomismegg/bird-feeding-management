@@ -55,6 +55,11 @@ namespace DataAccess
                 .FirstOrDefault(b => b.Id == birdId);
         }
 
+        public List<Bird> GetBirdsByCageId(int id)
+        {
+            return context.Birds.Where(bird => bird.Cageid == id).Include(bird => bird.Cage).ToList(); 
+        }
+
         public void AddBird(Bird bird)
         {
             context.Birds.Add(bird);

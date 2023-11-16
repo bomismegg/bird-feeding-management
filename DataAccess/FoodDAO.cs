@@ -49,6 +49,13 @@ namespace DataAccess
             return context.Foods.FirstOrDefault(f => f.Id == foodId);
         }
 
+        public List<CageFood> GetCageFoodByCageId(int id)
+        {
+            return context.CageFoods.Where(cf => cf.Cageid == id)
+                .Include(cf=> cf.Food)
+                .ToList();
+        }
+
         public void AddFood(Food food)
         {
             Food existFood = GetFoodById(food.Id);

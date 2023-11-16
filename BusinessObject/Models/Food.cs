@@ -16,4 +16,9 @@ public partial class Food
     public virtual ICollection<History> Histories { get; set; } = new List<History>();
 
     public virtual ICollection<PlanFood> PlanFoods { get; set; } = new List<PlanFood>();
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }

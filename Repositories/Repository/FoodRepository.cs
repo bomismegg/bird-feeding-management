@@ -21,6 +21,11 @@ namespace Repositories.Repository
             FoodDAO.Instance.DeleteFood(foodId);
         }
 
+        public List<CageFood> GetCageFoodByCageId(int id)
+        {
+            return FoodDAO.Instance.GetCageFoodByCageId(id);
+        }
+
         public Food GetFoodById(int foodId)
         {
             return FoodDAO.Instance.GetFoodById(foodId);

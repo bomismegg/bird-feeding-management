@@ -63,7 +63,7 @@ namespace FeedingManagement
 
         private void DgvBirdList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == dgvBirdList.Columns["Cage"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvBirdList.Columns["BirdFoods"].Index && e.RowIndex >= 0)
             {
                 if (dgvBirdList.Rows[e.RowIndex].DataBoundItem is Bird bird)
                 {

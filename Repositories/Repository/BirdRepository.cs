@@ -44,5 +44,10 @@ namespace Repositories.Repository
         {
             BirdDAO.Instance.AddBirdFood(birdFood);
         }
+
+        public List<Bird> GetBirdsByCageId(int id)
+        {
+            return BirdDAO.Instance.GetBirdsByCageId(id);
+        }
     }
 }

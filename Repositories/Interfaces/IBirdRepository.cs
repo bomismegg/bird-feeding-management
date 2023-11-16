@@ -17,5 +17,6 @@ namespace Repositories.IRepository
 
         public Bird GetBirdWithFoods(int birdId);
         public void AddBirdFood(BirdFood birdFood);
+        List<Bird> GetBirdsByCageId(int id);
     }
 }

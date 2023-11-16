@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using BusinessObject.Models;
 
 namespace DataAccess
@@ -9,6 +10,7 @@ namespace DataAccess
 
         private static PlanDAO instance = null;
         private static readonly object instanceLock = new object();
+        private BirdfoodmgrContext context;
 
         public static PlanDAO Instance
         {
@@ -25,9 +27,14 @@ namespace DataAccess
             }
         }
 
+        private PlanDAO()
+        {
+            context = new BirdfoodmgrContext();
+        }
+
         public List<Plan> GetPlans()
         {
-            return planList;
+            return context.Plans.ToList();
         }
 
         public Plan GetPlanById(int planId)

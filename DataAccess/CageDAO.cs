@@ -36,7 +36,12 @@ namespace DataAccess
         {
             try
             {
-                return context.Cages.ToList();
+                return context.Cages
+                    .Include(cage=>cage.Birds)
+                    .Include(cage=>cage.CageFoods)
+                    .Include(cage=>cage.Images)
+                    .Include(cage=>cage.Plans)
+                    .ToList();
             }
             catch (Exception ex)
             {
@@ -46,7 +51,9 @@ namespace DataAccess
 
         public Cage GetCageById(int cageId)
         {
-            return context.Cages.FirstOrDefault(c => c.Id == cageId);
+            return context.Cages
+                .Include(cage => cage.Birds)
+                .FirstOrDefault(c => c.Id == cageId);
         }
 
         public void AddCage(Cage cage)
@@ -57,7 +64,7 @@ namespace DataAccess
 
         public void UpdateCage(Cage cage)
         {
-            context.Entry(cage).State = EntityState.Modified;
+            context.Cages.Update(cage); 
             context.SaveChanges();
         }
 

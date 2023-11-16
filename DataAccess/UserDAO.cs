@@ -9,7 +9,7 @@ namespace DataAccess
 
         private static UserDAO instance = null;
         private static readonly object instanceLock = new object();
-
+        private BirdfoodmgrContext context;
         public static UserDAO Instance
         {
             get
@@ -25,9 +25,25 @@ namespace DataAccess
             }
         }
 
+        private UserDAO()
+        {
+            context = new BirdfoodmgrContext();
+        }
         public List<User> GetUsers()
         {
             return userList;
+        }
+
+        public User GetUser(string  email, string password)
+        {
+            foreach (User user in context.Users)
+            {
+                if (user.Email == email && user.Password == password)
+                {
+                    return user;
+                }
+            }
+            return null;
         }
 
         public User GetUserById(int userId)
